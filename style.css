@@ -1,0 +1,128 @@
+*{
+    box-sizing: border-box;
+}
+
+:root{
+    --primary-color: rgb(27, 7, 27);
+    --secondary-color: rgba(128, 0, 128, 0.496);
+}
+
+body{
+    font-family: monospace;
+    background-color: var(--primary-color);
+    margin: 0px;
+    max-width: 100vw;
+    overflow-x: hidden;
+}
+
+header{
+    padding: 1rem;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.search{
+    background-color: transparent;
+    border: 2px solid var(--secondary-color);
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-radius: 4rem;
+    color: aliceblue;
+}
+
+.search::placeholder{
+    color: var(--secondary-color);
+}
+
+.search:focus{
+    outline: none;
+    background-color: var(--primary-color);
+}
+
+main{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 10px;
+}
+
+.movie{
+    width: 22vw;
+    margin: 1rem 1rem;
+    background-color: var(--secondary-color);
+    box-shadow: 0px 4px 5px rgba(0,0,0,0.5);
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.movie img{
+    width: 100%;
+}
+
+.movie-info{
+    color: aliceblue;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 1rem 1rem;
+}
+
+.movie-info h3{
+    margin-top: 0px;
+}
+
+.movie-info span{
+    background-color: var(--primary-color);
+    color: aliceblue;
+    padding: 0.25rem 0.5rem;
+    border-radius: .3rem;
+    font-weight: bolder;
+}
+
+.movie-info span.green{
+    color: lightgreen;
+}
+
+.movie-info span.orange{
+    color: lightsalmon;
+}
+
+.movie-info span.red{
+    color: rgb(255, 8, 0);
+}
+
+.overview{
+    background-color: aliceblue;
+    padding: 2rem;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    max-height: 100%;
+    transform: translateY(101%);
+    transition: transform 0.3s ease-in;
+}
+
+.movie:hover .overview{
+    transform: translateY(0);
+}
+
+@media only screen and (max-width: 1150px) and (min-width: 650px){
+    .movie{
+        width: 32vw;
+        margin: 0.2rem;
+    }
+
+}
+
+@media(max-width: 600px){
+    .movie{
+        width: 45vw;
+        margin: 0.2rem;
+    }
+
+    .overview{
+        padding: 0.5rem;
+        overflow-x: hidden;
+    }
+}
